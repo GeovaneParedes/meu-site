@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Geovane Paredes | Engenheiro de Software & DevOps</title>
     
+    <meta property="og:title" content="Geovane Paredes | Engenheiro de Software & DevOps">
+    <meta property="og:description" content="Portfólio oficial. Especialista em Java, Spring Boot, Docker e Kubernetes. Confira meus projetos em produção.">
+    <meta property="og:image" content="https://github.com/GeovaneParedes.png">
+    <meta property="og:url" content="https://geovaneparedes.github.io">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -38,39 +45,17 @@
     </script>
 
     <style>
-        /* Efeito de Vidro (Glassmorphism) */
         .glass {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Card 3D Container */
-        .card-container {
-            perspective: 1000px;
-        }
-
-        .card-3d {
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
-        }
-
-        .card-container:hover .card-3d {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Animação de Entrada (Scroll) */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .card-container { perspective: 1000px; }
+        .card-3d { transition: transform 0.5s; transform-style: preserve-3d; }
+        .card-container:hover .card-3d { transform: rotateY(10deg) rotateX(5deg) scale(1.05); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-dark text-gray-200 antialiased selection:bg-primary selection:text-white">
@@ -224,7 +209,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                
                 <div class="card-container w-full h-full reveal">
                     <div class="card-3d glass rounded-2xl overflow-hidden h-full flex flex-col">
                         <div class="h-48 bg-gradient-to-r from-blue-900 to-slate-900 flex items-center justify-center relative group">
@@ -270,7 +254,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -329,23 +312,18 @@
     </footer>
 
     <script>
-        // Animação de elementos ao rolar a página
         const revealElements = document.querySelectorAll('.reveal');
-
         function reveal() {
             for (let i = 0; i < revealElements.length; i++) {
                 let windowHeight = window.innerHeight;
                 let elementTop = revealElements[i].getBoundingClientRect().top;
                 let elementVisible = 150;
-
                 if (elementTop < windowHeight - elementVisible) {
                     revealElements[i].classList.add('active');
                 }
             }
         }
-
         window.addEventListener('scroll', reveal);
-        // Ativa no carregamento inicial
         reveal();
     </script>
 </body>
